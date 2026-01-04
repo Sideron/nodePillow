@@ -1,4 +1,3 @@
-import { spawn } from "child_process";
 import express, { Request, Response, Application } from 'express';
 import multer from "multer";
 import compareImages from "./imgService";
@@ -9,10 +8,6 @@ const PORT: number = 3000;
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 20 * 1024 * 1024 }, // 10MB por imagen (ajusta si quieres)
-});
-
-app.get('/', (req: Request, res: Response) => {
-  res.send('Image Comparison API!!');
 });
 
 app.post(
